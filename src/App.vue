@@ -37,6 +37,15 @@
         <div v-if="value6" class="itme">解密结果： {{ value6 }}</div>
       </div>
     </div>
+    <footer>
+      娱乐一下，欢迎Star
+      <a
+        style="margin-left: 5px"
+        target="_blank"
+        href="https://github.com/ahwgs/aes-tool"
+        >https://github.com/ahwgs/aes-tool</a
+      >
+    </footer>
   </div>
 </template>
 <script>
@@ -108,6 +117,17 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: center;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background: cyan;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .row {
   flex: 1;
