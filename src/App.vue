@@ -1,38 +1,41 @@
 <template>
   <div class="container">
-    <div class="row">
-      <header>加密</header>
-      <div class="itme">
-        <n-input
-          v-model:value="value1"
-          type="textarea"
-          placeholder="加密内容"
-        />
+    <div class="row-header">在线AES Tools</div>
+    <div class="row-container">
+      <div class="row">
+        <header>加密</header>
+        <div class="itme">
+          <n-input
+            v-model:value="value1"
+            type="textarea"
+            placeholder="加密内容"
+          />
+        </div>
+        <div class="itme">
+          <n-input v-model:value="value2" type="text" placeholder="加密秘钥" />
+        </div>
+        <div class="itme">
+          <n-button @click="onCreate" type="primary">生成</n-button>
+        </div>
+        <div v-if="value5" class="itme">生成内容： {{ value5 }}</div>
       </div>
-      <div class="itme">
-        <n-input v-model:value="value2" type="text" placeholder="加密秘钥" />
+      <div class="row">
+        <header>解密</header>
+        <div class="itme">
+          <n-input
+            v-model:value="value3"
+            type="textarea"
+            placeholder="解密内容"
+          />
+        </div>
+        <div class="itme">
+          <n-input v-model:value="value4" type="text" placeholder="解密秘钥" />
+        </div>
+        <div class="itme">
+          <n-button @click="onDec" type="primary">解密</n-button>
+        </div>
+        <div v-if="value6" class="itme">解密结果： {{ value6 }}</div>
       </div>
-      <div class="itme">
-        <n-button @click="onCreate" type="primary">生成</n-button>
-      </div>
-      <div v-if="value5" class="itme">生成内容： {{ value5 }}</div>
-    </div>
-    <div class="row">
-      <header>解密</header>
-      <div class="itme">
-        <n-input
-          v-model:value="value3"
-          type="textarea"
-          placeholder="解密内容"
-        />
-      </div>
-      <div class="itme">
-        <n-input v-model:value="value4" type="text" placeholder="解密秘钥" />
-      </div>
-      <div class="itme">
-        <n-button @click="onDec" type="primary">解密</n-button>
-      </div>
-      <div v-if="value6" class="itme">解密结果： {{ value6 }}</div>
     </div>
   </div>
 </template>
@@ -97,6 +100,14 @@ export default defineComponent({
   display: flex;
   height: 100vh;
   width: 100vw;
+  flex-direction: column;
+}
+.row-header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .row {
   flex: 1;
@@ -104,6 +115,14 @@ export default defineComponent({
 }
 .itme {
   margin: 10px;
+}
+.row-container {
+  display: flex;
+}
+@media screen and (max-width: 500px) {
+  .row-container {
+    flex-direction: column;
+  }
 }
 header {
   align-items: center;
