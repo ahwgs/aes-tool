@@ -113,7 +113,6 @@ export default defineComponent({
     };
 
     const onCreate = () => {
-      console.log("fileListRef", fileListRef.value);
       if (!value1.value || !value2.value) {
         alert("请输入加密内容或秘钥");
         return;
